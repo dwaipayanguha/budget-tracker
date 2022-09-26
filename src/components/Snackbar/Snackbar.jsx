@@ -4,10 +4,11 @@ import MuiAlert from "@material-ui/lab/Alert"
 
 import useStyles from "./styles"
 
-const CustomizedSnackbar = (open, setOpen) => {
+const CustomizedSnackbar = ({ open, setOpen }) => {
     const classes = useStyles()
 
     const handleClose = (event, reason) => {
+        console.log("Esche")
         if (reason === "clickaway") {
             return
         }
@@ -18,7 +19,7 @@ const CustomizedSnackbar = (open, setOpen) => {
         <div className={classes.root}>
             <Snackbar
                 anchorOrigin={{ vertical: "top", horizontal: "right" }}
-                open={false}
+                open={open}
                 autoHideDuration={3000}
                 onClose={handleClose}
             >

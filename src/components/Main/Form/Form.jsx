@@ -37,7 +37,7 @@ const Form = () => {
         if (Number.isNaN(Number(formData.amount)) || !formData.date.includes("-")) return
 
         const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4() }
-        //setOpen(true)
+        setOpen(true)
         addTransaction(transaction)
         setFormData(initialState)
     }
@@ -90,7 +90,7 @@ const Form = () => {
     const selectedCategories = formData.type === "Income" ? incomeCategories : expenseCategories
 
     return (
-        <Grid container spacing="2">
+        <Grid container spacing={2}>
             <CustomizedSnackbar open={open} setOpen={setOpen} />
             <Grid item xs={12}>
                 <Typography align="center" variant="subtitle2" gutterBottom>
